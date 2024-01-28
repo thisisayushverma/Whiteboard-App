@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WhiteBoard App</string>
+    <string name="erasertxt">this is use to erase the content in the app</string>
+    <string name="erasertxt1">this is use to erase the content</string>
+    <string name="painttxt">this is use to set the colot of the tool</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="newbtnstring">its for creating the new pages\n</string>
+    <string name="menubtnstring">this is for give the export and delete option\n</string>
+</resources>

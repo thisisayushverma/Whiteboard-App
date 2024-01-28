@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/bgimgheader"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileimg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="35dp"
+        android:src="@color/white" />
+
+    <TextView
+        android:id="@+id/profilename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileimg"
+        android:layout_alignStart="@+id/profileimg"
+        android:layout_alignEnd="@+id/profileimg"
+
+        android:layout_marginStart="-11dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="-31dp"
+        android:layout_marginBottom="10dp"
+        android:text="Ayush Verma"
+        android:textColor="#F6F6F6"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/profileemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profilename"
+        android:layout_alignStart="@+id/profilename"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="20dp"
+        android:text="ayushverma@gmail.com"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</RelativeLayout>

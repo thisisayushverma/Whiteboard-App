@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreationCanvas">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.example.whiteboardapp.CanvasClass
+            android:id="@+id/drawarea"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#300F0F"
+            android:backgroundTint="#292A2C"
+            android:contentDescription="@string/app_name" />
+
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/colorscroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/colorpallet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/redbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:src="@drawable/redcolor" />
+
+                <ImageButton
+                    android:id="@+id/yellowbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/yellowcolor" />
+
+                <ImageButton
+                    android:id="@+id/whitebtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/whitecolor" />
+
+                <ImageButton
+                    android:id="@+id/greenbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/greencolor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/strokepallet"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/strokeslider"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:valueFrom="5"
+                    android:stepSize="1"
+                    app:tickVisible="false"
+                    android:valueTo="50" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91" />
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="InvalidId">
+
+
+        <LinearLayout
+            android:id="@+id/idoption"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idcolorsection"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/selectorbg">
+
+                <ImageButton
+                    android:id="@+id/idpaintimg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/painttxt"
+                    android:scaleType="centerInside"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:src="@drawable/svg_paint" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ideraser"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/selectorbg">
+
+                <ImageButton
+                    android:id="@+id/eraseimgbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/erasertxt1"
+                    android:scaleType="centerInside"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:src="@drawable/svg_eraser"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idstrokesize"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/selectorbg">
+
+                <ImageButton
+                    android:id="@+id/strokeimgbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="TODO"
+                    android:scaleType="centerInside"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:src="@drawable/svg_pen" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idsave"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/selectorbg">
+
+                <ImageButton
+                    android:id="@+id/saveimgbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="TODO"
+                    android:scaleType="centerInside"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:src="@drawable/svg_save" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/selectorbg"
+                android:backgroundTint="#00FFFFFF" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/selectorbg" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
